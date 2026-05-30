@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><-BlogAndPostTitle-> | Puella Magi: Madoka Magica -Welcome- ✦</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Fonts: Vazirmatn for Persian + Playfair/Poppins for English/Fantasy -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, rgba(18, 12, 26, 0.88), rgba(28, 18, 34, 0.94)), 
+              url('https://uploadkon.ir/uploads/7ea829_26d99988f2744694bb64c0ffef93bf307c.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Vazirmatn', 'Poppins', sans-serif;
+  color: #f0e6f5;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 24px 20px;
+}
+
+/* header glassmorphism */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: rgba(25, 18, 35, 0.7);
+  backdrop-filter: blur(14px);
+  border-radius: 80px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(255, 210, 240, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  font-family: 'Playfair Display', 'Vazirmatn', serif;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffe0f2, #e2b0ff, #ffb3d9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(255, 160, 210, 0.4);
+}
+
+.header i {
+  font-size: 26px;
+  color: #ffc8e8;
+  transition: all 0.2s ease;
+  cursor: default;
+  filter: drop-shadow(0 0 4px #ffa0d0);
+}
+
+/* main grid */
+.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+}
+
+/* POSTS - less transparent, more solid & aesthetic */
+.post {
+  background: rgba(30, 22, 44, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 28px;
+  border-radius: 36px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 200, 230, 0.25);
+  transition: all 0.25s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.post:hover {
+  background: rgba(40, 30, 56, 0.92);
+  border-color: rgba(255, 180, 220, 0.5);
+  transform: translateY(-3px);
+}
+
+.post h2 {
+  font-family: 'Playfair Display', 'Vazirmatn', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffeaf5;
+  letter-spacing: -0.3px;
+  border-left: 5px solid #ffb3e6;
+  padding-left: 20px;
+}
+
+.post p {
+  font-size: 1rem;
+  color: #f5eaff;
+  margin-bottom: 14px;
+}
+
+.post a {
+  color: #ffc2e6;
+  text-decoration: none;
+  border-bottom: 1px dashed #ff99d0;
+  transition: 0.2s;
+}
+
+.post a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffd0ff;
+}
+
+/* SIDEBAR panels */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.panel {
+  background: rgba(22, 16, 36, 0.75);
+  backdrop-filter: blur(12px);
+  padding: 22px 24px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 210, 240, 0.2);
+  transition: all 0.2s ease;
+}
+
+.panel:hover {
+  background: rgba(28, 20, 44, 0.82);
+  border-color: rgba(255, 190, 225, 0.35);
+}
+
+.panel b {
+  font-family: 'Playfair Display', 'Vazirmatn', serif;
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #ffdef2;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #ffb1dc;
+  padding-bottom: 6px;
+}
+
+/* ---------- WEBMASTER / PROFILE SECTION (fixed & beautiful) ---------- */
+.webmaster-profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 10px 0 6px 0;
+}
+
+.webmaster-avatar {
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(145deg, #ffb3da, #d48eff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 220, 250, 0.7);
+}
+
+.webmaster-avatar i {
+  font-size: 38px;
+  color: #2a1a38;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.webmaster-info h3 {
+  font-family: 'Playfair Display', 'Vazirmatn', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffe8f5;
+  margin-bottom: 4px;
+}
+
+.webmaster-info .role {
+  font-size: 12px;
+  letter-spacing: 1px;
+  background: rgba(255, 180, 210, 0.25);
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.webmaster-bio {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #e4cfff;
+  border-top: 1px solid rgba(255, 200, 230, 0.2);
+  padding-top: 12px;
+  font-style: italic;
+}
+
+/* about image */
+.about-img {
+  width: 100%;
+  border-radius: 28px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 200, 230, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.01);
+}
+
+.about-text {
+  line-height: 1.65;
+  font-size: 0.92rem;
+}
+
+/* playlist songs */
+.song {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 60px;
+  background: rgba(255, 255, 255, 0.07);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 200, 230, 0.12);
+}
+
+.song:hover {
+  background: rgba(255, 210, 240, 0.15);
+  transform: translateX(6px);
+  border-color: rgba(255, 180, 210, 0.5);
+}
+
+.song img {
+  width: 44px;
+  height: 44px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.song span:first-of-type {
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex: 1;
+  font-family: 'Poppins', 'Vazirmatn', sans-serif;
+}
+
+/* wave animation */
+.wave {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 18px;
+  margin-right: 6px;
+}
+
+.wave span {
+  width: 3px;
+  background: #ffbae5;
+  border-radius: 3px;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.wave span:nth-child(1) { height: 6px; animation-delay: 0s; }
+.wave span:nth-child(2) { height: 10px; animation-delay: 0.2s; }
+.wave span:nth-child(3) { height: 4px; animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 100% { height: 5px; }
+  50% { height: 14px; }
+}
+
+.like {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #ffacda;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 50px;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.like:hover {
+  background: rgba(255, 120, 170, 0.4);
+  color: #ffe0f5;
+  transform: scale(1.02);
+}
+
+audio {
+  width: 100%;
+  margin-top: 18px;
+  border-radius: 60px;
+  background: #1f1530;
+  outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #2e1f40;
+}
+
+/* memory quote */
+.memory-quote {
+  font-style: italic;
+  font-family: 'Playfair Display', 'Vazirmatn', serif;
+  font-size: 1rem;
+  color: #f2dcff;
+  text-align: center;
+  margin-top: 8px;
+  padding: 10px;
+  background: rgba(255, 210, 240, 0.08);
+  border-radius: 28px;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 50px;
+  }
+  .post h2 {
+    font-size: 24px;
+  }
+  .webmaster-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.webmaster-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover; /* This makes sure the image doesn't stretch weirdly */
+}
+
+.rain-drop {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: blue;
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { top: -20px; opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
+} 
+
+<script>
+for(let i = 0; i < 50; i++) {
+    let drop = document.createElement('div');
+    drop.className = 'rain-drop';
+    drop.style.left = Math.random() * 100 + '%';
+    drop.style.animationDuration = 1 + Math.random() * 3 + 's';
+    drop.style.animationDelay = Math.random() * 5 + 's';
+    drop.style.opacity = 0.3 + Math.random() * 0.7;
+    document.body.appendChild(drop);
+}
+</script>
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">✦ Puella Magi Madoka Magica -Welcome- ✦</div>
+    <div><i class="fas fa-crystal-ball"></i></div>
+  </div>
+
+  <div class="main">
+
+    <!-- POSTS SECTION (BLOGFA) -->
+    <div>
+      <BLOGFA>
+        <div class="post">
+          <h2><-PostTitle-></h2>
+          <p><-PostContent-></p>
+          <BlogPostTagsBlock>
+            <br>🏷️ برچسب‌ها: <BlogPostTags separator=", "><a href="<-TagLink->"><-TagName-></a></BlogPostTags>
+          </BlogPostTagsBlock>
+        </div>
+      </BLOGFA>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- ✅ WEBMASTER / ADMIN PROFILE -->
+<div class="panel">
+  <b><i class="fas fa-moon"></i> About Me</b>
+  <div class="webmaster-profile">
+    <div class="webmaster-avatar">
+      <!-- Insert your custom picture link right below -->
+      <img src="https://uploadkon.ir/uploads/06a730_26InShot-20260530-094627246.gif" alt="Edgar Profile">
+    </div>
+    <div class="webmaster-info">
+      <h3>Edgar (He/Him) </h3>
+      <span class="role"><i class="fas fa-magic"></i> Head of Murder</span>
+    </div>
+  </div>
+  <div class="webmaster-bio">
+    <i class="fas fa-quote-left" style="font-size: 10px; opacity: 0.7;"></i> 
+    Hi! im Edgar. i made this weblog for fun to share my thoughts, songs, vids etc. 
+    i might update this place regulary.
+    <span style="display: block; margin-top: 5px;">✨ “current mood: Sleepy” ✨</span>
+  </div>
+</div>
+
+      <!-- ABOUT BLOG SECTION -->
+      <div class="panel">
+        <b><i class="fas fa-star-of-life"></i> about</b>
+        <img class="about-img" src="https://uploadkon.ir/uploads/c9b229_26cff7ba6be9f4ab104271ca89e4451844.jpg" alt="about aesthetic">
+        <div class="about-text">
+          ✦ about ✦<br>
+         this web is a heavy work on progress
+          <span style="display: inline-block; margin-top: 8px; font-size: 0.8rem;">🌸 Started at Rory's Birthday</span>
+        </div>
+      </div>
+
+      <!-- PLAYLIST SECTION -->
+      <div class="panel">
+        <b><i class="fas fa-headphones"></i> playlist</b>
+        <div id="playlist"></div>
+        <audio id="player" controls preload="none"></audio>
+      </div>
+
+      <!-- MEMORY SECTION -->
+      <div class="panel">
+        <b><i class="far fa-heart"></i> memory</b>
+        <div class="memory-quote">
+          “Hope is not wrong. It carries magic forever.
+          <span style="font-size: 12px;">— Madoka Kaname</span>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+      
+<script>
+/* 🎵 PLAYLIST DATA */
+const songs = [
+  {
+    name: "sis puella magica!",
+    src: "https://uploadkon.ir/uploads/1fd629_2614-Sis-Puella-Magica-Yuki-Kajiura-320-.mp3",
+    cover: "https://uploadkon.ir/uploads/fa3e29_26IMG-20260529-231618.jpg"
+  },
+  {
+    name: "Dectrum",
+    src: "https://uploadkon.ir/uploads/312d29_2612-Decretum-Sayaka-Miki-s-Them-Madoka-Magica【まどか★マギカ】-PianoBox.mp3",
+    cover: "https://uploadkon.ir/uploads/b4f529_26IMG-20260529-231602.jpg"
+  },
+  {
+    name: "Bad Apple!!",
+    src: "https://uploadkon.ir/uploads/f4e530_2611-Bad-Apple-feat-nomico-Nomico-320-.mp3",
+    cover: "https://uploadkon.ir/uploads/af4730_26InShot-20260530-100717969.gif"
+  }
+];
+
+const playlistContainer = document.getElementById("playlist");
+const audioPlayer = document.getElementById("player");
+
+function playTrack(index) {
+  if (songs[index] && songs[index].src) {
+    audioPlayer.src = songs[index].src;
+    audioPlayer.play().catch(e => console.log("user interaction needed"));
+  }
+}
+
+songs.forEach((track, idx) => {
+  let storedLikes = localStorage.getItem(`like_puella_${idx}`);
+  let likeCount = storedLikes !== null ? parseInt(storedLikes) : 0;
+
+  const songItem = document.createElement("div");
+  songItem.className = "song";
+
+  songItem.innerHTML = `
+    <img src="${track.cover}" alt="cover" loading="lazy">
+    <span>${track.name}</span>
+    <div class="wave" id="waveAnim-${idx}">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="like" data-likeidx="${idx}">
+      ❤ <span id="likeSpan${idx}">${likeCount}</span>
+    </div>
+  `;
+
+  // play on whole song except like button
+  songItem.addEventListener("click", (e) => {
+    if (e.target.closest('.like')) return;
+    playTrack(idx);
+    const waveEl = document.getElementById(`waveAnim-${idx}`);
+    if (waveEl) {
+      waveEl.style.opacity = "1";
+      setTimeout(() => { if(waveEl) waveEl.style.opacity = "0.7"; }, 250);
+    }
+  });
+
+  // like mechanism
+  const likeBtn = songItem.querySelector('.like');
+  likeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let current = localStorage.getItem(`like_puella_${idx}`);
+    let newLikes = current !== null ? parseInt(current) + 1 : 1;
+    localStorage.setItem(`like_puella_${idx}`, newLikes);
+    const likeSpan = document.getElementById(`likeSpan${idx}`);
+    if (likeSpan) likeSpan.innerText = newLikes;
+    
+    likeBtn.style.transform = "scale(1.1)";
+    setTimeout(() => { if(likeBtn) likeBtn.style.transform = "scale(1)"; }, 150);
+  });
+
+  playlistContainer.appendChild(songItem);
+});
+
+// optional: small animation when audio ends
+audioPlayer.addEventListener('ended', () => {
+  // nothing forced, can add next but not needed
+});
+</script>
+
+<!-- extra polish for tags & scroll -->
+<style>
+  .post a[href^="<-TagLink->"] {
+    background: rgba(255, 200, 240, 0.15);
+    padding: 3px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px 5px 3px 0;
+  }
+  .post a[href^="<-TagLink->"]:hover {
+    background: #ffb7dc;
+    color: #1e102e;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #261c34;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f2a0d0;
+    border-radius: 10px;
+  }
+  .panel i, .webmaster-profile i {
+    margin-right: 5px;
+  }
+  .webmaster-bio i {
+    margin-right: 4px;
+  }
+</style>
+<!-- Code BY : Stella.BlogFa.Com -->
+<style>img, table, td, tr, a, hr, ul, ol, video, audio{ max-width: 100% !important; height: auto !important;}</style>
+<!-- Code BY : Stella.BlogFa.Com -->
+</body>
+</html>
